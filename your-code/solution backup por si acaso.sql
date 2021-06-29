@@ -1,6 +1,7 @@
 USE publications;
 
 -- Challenge 1 - Who Have Published What At Where?
+
 -- AUTHOR ID - the ID of the author
 -- LAST NAME - author last name
 -- FIRST NAME - author first name
@@ -31,7 +32,7 @@ ON t.title_id = tit.title_id
 LEFT JOIN publishers as p
 ON tit.pub_id = p.pub_id
 GROUP BY a.au_id, p.pub_name
-ORDER BY COUNT(tit.title) DESC;
+ORDER BY a.au_id DESC;
 
 -- Challenge 3 - Best Selling Authors
 
@@ -67,3 +68,6 @@ ON a.au_id = t.au_id
 LEFT JOIN titles as tit
 ON t.title_id = tit.title_id
 ORDER BY ytd_sales DESC;
+
+
+
